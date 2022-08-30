@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{mo.img.url}}" width="300" height="300">
+        </div>
+<div class="col-md-6">
+    <h6>{{mo.name}}</h6><br>
+    {{mo.desc}}<br>
+    {{mo.year}}<br>
+    <a class="btn btn-warning" href="{% url 'movieapp:update' mo.id %}">update</a>
+    <a class="btn btn-danger" href="{% url 'movieapp:delete' mo.id %}">delete</a>
+</div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>
